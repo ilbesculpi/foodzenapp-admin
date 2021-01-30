@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/theme/sbadmin/sb-admin-2.css",
               "src/styles.scss"
             ],
             "scripts": []
