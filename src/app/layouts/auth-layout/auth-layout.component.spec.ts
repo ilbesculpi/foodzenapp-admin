@@ -1,25 +1,37 @@
+import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthLayoutComponent } from './auth-layout.component';
 
+@Component({
+    selector: 'router-outlet',
+    template: ''
+})
+class RouterOutletStub {
+}
+
 describe('AuthLayoutComponent', () => {
-  let component: AuthLayoutComponent;
-  let fixture: ComponentFixture<AuthLayoutComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AuthLayoutComponent ]
-    })
-    .compileComponents();
-  }));
+    let component: AuthLayoutComponent;
+    let fixture: ComponentFixture<AuthLayoutComponent>;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AuthLayoutComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                RouterOutletStub,
+                AuthLayoutComponent
+            ]
+        }).compileComponents();
+    }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AuthLayoutComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+
 });

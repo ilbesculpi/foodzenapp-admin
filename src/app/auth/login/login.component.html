@@ -7,13 +7,14 @@
           <div class="text-center">
             <h1 class="h4 text-gray-900 mb-4">Login</h1>
           </div>
-          <form class="user">
+          <form [formGroup]="form" class="user" (submit)="submit()">
             <div class="form-group">
-              <input type="email" class="form-control"
+              <input type="email" class="form-control" formControlName="email"
                 aria-describedby="emailHelp" placeholder="Enter Email Address...">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" formControlName="password"
+                placeholder="Password">
             </div>
             <div class="form-group">
               <div class="custom-control custom-checkbox small">
@@ -22,9 +23,9 @@
                   Me</label>
               </div>
             </div>
-            <a href="index.html" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">
               Login
-            </a>
+            </button>
           </form>
           <hr>
           <div class="text-center">

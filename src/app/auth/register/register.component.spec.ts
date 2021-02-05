@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { RegisterComponent } from './register.component';
 
@@ -9,9 +10,11 @@ describe('RegisterComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [RegisterComponent]
-        })
-            .compileComponents();
+            declarations: [RegisterComponent],
+            imports: [
+                SharedModule
+            ]
+        }).compileComponents();
     }));
 
     beforeEach(() => {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-auth-register',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+
+    form: FormGroup = new FormGroup({
+
+    });
 
     constructor() {
     }
