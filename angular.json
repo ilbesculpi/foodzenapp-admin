@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/theme/sbadmin/css/sb-admin-2.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.css",
+              "src/assets/vendor/font-awesome/css/fontawesome.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/jquery/jquery-3.5.1.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,6 +74,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "admin:build",
+            "host": "0.0.0.0",
             "port": 3200
           },
           "configurations": {

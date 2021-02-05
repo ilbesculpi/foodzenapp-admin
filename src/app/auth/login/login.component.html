@@ -1,1 +1,46 @@
-<p>login works!</p>
+<div class="card o-hidden border-0 shadow-lg my-4">
+  <div class="card-body p-0">
+    <div class="row">
+      <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+      <div class="col-lg-6">
+        <div class="p-4">
+          <img src="/assets/img/logo.png" class="logo" alt="Logo">
+          <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Login</h1>
+          </div>
+          <div [class]="loginError.cssClass" role="alert" *ngIf="loginError">
+            {{ loginError.message }}
+          </div>
+          <form [formGroup]="form" class="user" (submit)="submit()">
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName="email"
+                aria-describedby="emailHelp" placeholder="Enter Email Address...">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" formControlName="password"
+                placeholder="Password">
+            </div>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox small">
+                <input type="checkbox" class="custom-control-input" id="customCheck">
+                <label class="custom-control-label" for="customCheck">Remember
+                  Me</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">
+              Login
+            </button>
+          </form>
+          <hr>
+          <div class="text-center">
+            <a class="small" routerLink="/auth/forgot">Forgot Password?</a>
+          </div>
+          <div class="text-center">
+            <a class="small" routerLink="/auth/register">Create an Account!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
