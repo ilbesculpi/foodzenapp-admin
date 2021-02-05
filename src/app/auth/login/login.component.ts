@@ -10,9 +10,15 @@ import { AuthService } from 'src/app/services';
 export class LoginComponent implements OnInit {
 
     form: FormGroup = new FormGroup({
-        email: new FormControl('admin@localhost.com', [Validators.required, Validators.email]),
-        password: new FormControl('123456', [Validators.required, Validators.minLength(4)])
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', [Validators.required, Validators.minLength(4)])
     });
+
+    loginError: {
+        type: string;
+        cssClass: string;
+        message: string;
+    }
 
     constructor(private authService: AuthService) {
     }
@@ -21,10 +27,25 @@ export class LoginComponent implements OnInit {
     }
 
     async submit() {
-        console.log('form', this.form.value);
+
+        // console.log('form', this.form.value);
+
+        // clear error message
+        this.loginError = null;
+
         const { email, password } = this.form.value;
-        const response = await this.authService.login(email, password);
-        console.log('response', response);
+        try {
+            const response = await this.authService.login(email, password);
+            console.log('response', response);
+        }
+        catch(error) {
+            console.log(error);
+            this.loginError = {
+                type: 'danger',
+                cssClass: 'alert alert-danger',
+                message: error.error.message
+            }
+        }
     }
 
 }

@@ -1,11 +1,15 @@
-<div class="card o-hidden border-0 shadow-lg my-5">
+<div class="card o-hidden border-0 shadow-lg my-4">
   <div class="card-body p-0">
     <div class="row">
       <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
       <div class="col-lg-6">
-        <div class="p-5">
+        <div class="p-4">
+          <img src="/assets/img/logo.png" class="logo" alt="Logo">
           <div class="text-center">
             <h1 class="h4 text-gray-900 mb-4">Login</h1>
+          </div>
+          <div [class]="loginError.cssClass" role="alert" *ngIf="loginError">
+            {{ loginError.message }}
           </div>
           <form [formGroup]="form" class="user" (submit)="submit()">
             <div class="form-group">

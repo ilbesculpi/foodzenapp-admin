@@ -1,0 +1,15 @@
+img.logo {
+    display: block;
+    width: 100%;
+    margin: -2.5rem auto;
+}
+
+div.alert {
+    font-size: 0.75rem;
+}
+
+@media(min-width: 768px) {
+    img.logo {
+        width: 75%;
+    }
+}

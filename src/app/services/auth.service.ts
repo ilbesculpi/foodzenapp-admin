@@ -10,7 +10,7 @@ export class AuthService {
     }
 
     login(email, password) {
-        return this.api.get<any>('auth/login', { email, password });
+        return this.api.post<any>('auth/login', { email, password });
     }
 
 }
