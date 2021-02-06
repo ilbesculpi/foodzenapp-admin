@@ -30,7 +30,7 @@
             "styles": [
               "src/assets/theme/sbadmin/css/sb-admin-2.css",
               "src/assets/vendor/bootstrap/css/bootstrap.css",
-              "src/assets/vendor/font-awesome/css/fontawesome.css",
+              "src/assets/vendor/font-awesome/css/all.css",
               "src/styles.scss"
             ],
             "scripts": [
