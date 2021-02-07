@@ -1,80 +1,112 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-  <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-    <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-hamburger"></i>
-    </div>
-    <div class="sidebar-brand-text mx-3">FoodZen</div>
+  <!-- Brand Logo -->
+  <a routerLink="/admin/dashboard" class="brand-link">
+    <img src="/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">FoodZen</span>
   </a>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider my-0">
+  <!-- Sidebar -->
+  <div class="sidebar">
 
-  <!-- Nav Item - Dashboard -->
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link" routerLink="/admin/dashboard">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Dashboard</span>
-    </a>
-  </li>
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="/assets/img/avatar2.png" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">Alexander Pierce</a>
+      </div>
+    </div>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider">
+    <!-- SidebarSearch Form -->
+    <div class="form-inline">
+      <div class="input-group" data-widget="sidebar-search">
+        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-sidebar">
+            <i class="fas fa-search fa-fw"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
-  <div class="sidebar-heading">
-    Main
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+        <li class="nav-item">
+          <a routerLink="/admin/dashboard" class="nav-link" routerLinkActive="active">
+            <i class="nav-icon fas fa-fw fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+            </p>
+          </a>
+        </li>
+
+        <div class="sidebar-heading">
+          Main
+        </div>
+
+        <li class="nav-item">
+          <a routerLink="/admin/recipes" class="nav-link" routerLinkActive="active">
+            <i class="nav-icon fas fa-fw fa-hamburger"></i>
+            <p>
+              Recipes
+              <span class="right badge badge-danger">New</span>
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/admin/ingredients" class="nav-link" routerLinkActive="active">
+            <i class="nav-icon fas fa-fw fa-pepper-hot"></i>
+            <p>
+              Ingredients
+              <span class="right badge badge-danger">New</span>
+            </p>
+          </a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">
+          System
+        </div>
+
+        <li class="nav-item">
+          <a routerLink="/admin/settings" class="nav-link" routerLinkActive="active">
+            <i class="nav-icon fas fa-fw fa-cog"></i>
+            <p>
+              Settings
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/admin/users" class="nav-link" routerLinkActive="active">
+            <i class="nav-icon fas fa-fw fa-users"></i>
+            <p>
+              Users
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/admin/users" class="nav-link" routerLinkActive="active">
+            <i class="nav-icon fas fa-fw fa-sign-out-alt"></i>
+            <p>
+              Logout
+            </p>
+          </a>
+        </li>
+
+
+      </ul>
+
+    </nav>
+    <!-- /.sidebar-menu -->
   </div>
-
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link" routerLink="/admin/recipes">
-      <i class="fas fa-fw fa-hamburger"></i>
-      <span>Recipes</span>
-    </a>
-  </li>
-
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link" routerLink="/admin/ingredients">
-      <i class="fas fa-fw fa-pepper-hot"></i>
-      <span>Ingredients</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider">
-
-  <!-- Heading -->
-  <div class="sidebar-heading">
-    System
-  </div>
-
-  <li class="nav-item">
-    <a class="nav-link" href="settings.html">
-      <i class="fas fa-fw fa-cog"></i>
-      <span>Settings</span>
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="users.html">
-      <i class="fas fa-fw fa-users"></i>
-      <span>Users</span>
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="logout.html">
-      <i class="fas fa-fw fa-sign-out-alt"></i>
-      <span>Logout</span>
-    </a>
-  </li>
-
-  <!-- Divider -->
-  <hr class="sidebar-divider d-none d-md-block">
-
-  <!-- Sidebar Toggler (Sidebar) -->
-  <div class="text-center d-none d-md-inline">
-      <button class="rounded-circle border-0" id="sidebarToggle"></button>
-  </div>
-
-</ul>
+  <!-- /.sidebar -->
+</aside>
