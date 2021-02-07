@@ -1,0 +1,29 @@
+<h1 class="h3 mb-4 text-gray-800">Recipes Page</h1>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Recipes</div>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped" *ngIf="$recipes | async as recipes">
+      <thead>
+        <tr>
+          <th>Recipe</th>
+          <th>Image</th>
+          <th>Rating</th>
+          <th>Status</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recipe of recipes">
+          <td>{{ recipe.name }}</td>
+          <td>&nbsp;</td>
+          <td>{{ recipe.rating }}</td>
+          <td>{{ recipe.status }}</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
