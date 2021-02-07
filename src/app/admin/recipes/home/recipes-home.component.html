@@ -1,0 +1,40 @@
+<div class="section-header">
+  <h1>Recipes Page</h1>
+</div>
+
+<div class="row my-2">
+  <div class="col">
+    <a routerLink="create" class="btn btn-success">
+      <i class="fas fa-plus"></i>
+      Create Recipe
+    </a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Recipes</h3>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-striped" *ngIf="$recipes | async as recipes">
+      <thead>
+        <tr>
+          <th>Recipe</th>
+          <th>Image</th>
+          <th>Rating</th>
+          <th>Status</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recipe of recipes">
+          <td>{{ recipe.name }}</td>
+          <td>&nbsp;</td>
+          <td>{{ recipe.rating }}</td>
+          <td>{{ recipe.status }}</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

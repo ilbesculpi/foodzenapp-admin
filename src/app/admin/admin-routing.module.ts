@@ -22,6 +22,10 @@ const routes: Routes = [
                 component: DashboardComponent
             },
             {
+                path: 'recipes',
+                loadChildren: () => import('./recipes/recipes.module').then(m => m.RecipesModule)
+            },
+            {
                 path: '**',
                 component: Page404Component
             }
