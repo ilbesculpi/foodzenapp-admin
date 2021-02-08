@@ -1,0 +1,61 @@
+<section class="content-header row mb-2">
+  <div class="col-sm-6">
+    <h1>Create Recipe</h1>
+  </div>
+  <div class="col-sm-6">
+    <ol class="breadcrumb float-sm-right">
+      <li class="breadcrumb-item"><a routerLink="/admin/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item"><a routerLink="/admin/recipes">Recipes</a></li>
+      <li class="breadcrumb-item active">Create</li>
+    </ol>
+  </div>
+</section>
+
+<section class="content">
+
+  <form [formGroup]="form" (submit)="submit()">
+
+    <div class="row">
+
+      <div class="col-12">
+
+        <div class="card card-primary">
+
+          <div class="card-header">
+            <h3 class="card-title">New Recipe</h3>
+          </div>
+
+          <div class="card-body">
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" formControlName="name" placeholder="i,e: Noodles, Pasta Carbonara">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" class="form-control" formControlName="description"></textarea>
+            </div>
+
+          </div>
+
+          <div class="card-footer">
+
+            <div class="row">
+              <div class="col-12">
+                <a routerLink="/admin/recipes" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Create" class="btn btn-success float-right" [disabled]="form.invalid">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+
+</section>
