@@ -8,30 +8,60 @@ describe('ApiService', () => {
 
     beforeEach(() => TestBed.configureTestingModule({}));
 
+    const asyncData = (json: any) : Observable<any> => {
+        return of(json);
+    };
+
     describe('GET', () => {
 
-        const asyncData = (json: any) : Observable<any> => {
-            return of(json);
-        };
-
         it('should perform GET requests without parameters', async () => {
+
             const httpSpy = jasmine.createSpyObj('HttpClient', ['get']);
+            httpSpy.get.and.returnValue(asyncData({}));
             const service: ApiService = new ApiService(httpSpy as any);
-            httpSpy.get.and.returnValue(asyncData({}))
 
             const data = await service.get<any>('plain');
-            expect(httpSpy.get.calls.count()).toBe(1);
-            expect(httpSpy.get.calls.argsFor(0)).toEqual(['http://localhost:8000/plain']);
+            expect(httpSpy.get).toHaveBeenCalledTimes(1);
+            expect(httpSpy.get).toHaveBeenCalledWith('http://localhost:8000/plain');
         });
 
         it('should perform GET requests with query parameters', async () => {
-            const httpSpy = jasmine.createSpyObj('HttpClient', ['get']);
-            const service: ApiService = new ApiService(httpSpy as any);
-            httpSpy.get.and.returnValue(asyncData({}))
 
+            // Setup spies
+            const httpSpy = jasmine.createSpyObj('HttpClient', ['get']);
+            httpSpy.get.and.returnValue(asyncData({}));
+
+            // Instantiate the service
+            const service: ApiService = new ApiService(httpSpy as any);
+
+            // Call service.get()
             const data = await service.get<any>('plain', { a: 'foo', b: 'bar' });
-            expect(httpSpy.get.calls.count()).toBe(1);
-            expect(httpSpy.get.calls.argsFor(0)).toEqual(['http://localhost:8000/plain', { a: 'foo' }]);
+
+            // Expectations
+            expect(httpSpy.get).toHaveBeenCalledTimes(1);
+            expect(httpSpy.get).toHaveBeenCalledWith('http://localhost:8000/plain?a=foo&b=bar');
+        });
+
+    });
+
+    describe('POST', () => {
+
+        it('should perform POST requests', async () => {
+
+            // Setup spies
+            const httpSpy = jasmine.createSpyObj('HttpClient', ['post']);
+            httpSpy.post.and.returnValue(asyncData({}));
+
+            // Instantiate the service
+            const service: ApiService = new ApiService(httpSpy as any);
+
+            // Call service.post() with some data
+            const data = await service.post<any>('data', { weapon: 'sword' });
+
+            // Expectations
+            expect(httpSpy.post).toHaveBeenCalledTimes(1);
+            expect(httpSpy.post).toHaveBeenCalledWith('http://localhost:8000/data', { weapon: 'sword' });
+
         });
 
     });
