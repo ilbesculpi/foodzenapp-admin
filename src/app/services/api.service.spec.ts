@@ -32,7 +32,8 @@ describe('ApiService', () => {
             const data = await service.get<any>('plain', { a: 'foo', b: 'bar' });
             expect(httpSpy.get.calls.count()).toBe(1);
             expect(httpSpy.get.calls.argsFor(0)).toEqual(['http://localhost:8000/plain', { a: 'foo' }]);
-        })
-    })
+        });
+
+    });
 
 });

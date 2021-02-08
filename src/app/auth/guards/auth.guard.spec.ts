@@ -4,14 +4,16 @@ import { AuthGuard } from './auth.guard';
 
 describe('AuthGuard', () => {
 
+    let authSpy;
+    let routerSpy;
+
     beforeEach(() => {
-        TestBed.configureTestingModule({
-            providers: [AuthGuard]
-        });
+        authSpy = jasmine.createSpyObj('AuthService', ['login']);
     });
 
-    it('should ...', inject([AuthGuard], (guard: AuthGuard) => {
+    it('should ...', () => {
+        const guard = new AuthGuard(authSpy, routerSpy);
         expect(guard).toBeTruthy();
-    }));
+    });
 
 });
