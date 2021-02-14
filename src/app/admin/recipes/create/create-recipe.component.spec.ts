@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RecipesService } from 'src/app/services';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { CreateRecipeComponent } from './create-recipe.component';
 
@@ -14,7 +15,12 @@ describe('CreateRecipeComponent', () => {
         recipesService = jasmine.createSpyObj('RecipesService', ['createRecipe']);
 
         TestBed.configureTestingModule({
-            declarations: [CreateRecipeComponent],
+            declarations: [
+                CreateRecipeComponent
+            ],
+            imports: [
+                SharedModule
+            ],
             providers: [
                 { provide: RecipesService, useValue: recipesService }
             ]
@@ -38,6 +44,15 @@ describe('CreateRecipeComponent', () => {
             const page: HTMLElement = fixture.nativeElement;
             const titleEl = page.querySelector('h1');
             expect(titleEl.textContent).toBe('Create Recipe');
+        });
+
+    });
+
+    describe('submit()', () => {
+
+        it('should call recipesServices.createRecipe()', async () => {
+            fixture.detectChanges();
+            expect(recipesService.createRecipe).toHaveBeenCalled();
         });
 
     });

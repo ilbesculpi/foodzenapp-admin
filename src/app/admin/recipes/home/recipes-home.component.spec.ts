@@ -43,11 +43,8 @@ describe('RecipesHomeComponent', () => {
     describe('ngOnInit()', () => {
 
         it('should fetch all recipes', async () => {
-
             fixture.detectChanges();
-
             expect(recipesService.fetchAllRecipes).toHaveBeenCalled();
-
         });
 
     });
