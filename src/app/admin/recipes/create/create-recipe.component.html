@@ -34,7 +34,8 @@
 
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea id="description" class="form-control" formControlName="description"></textarea>
+              <input type="hidden" formControlName="description" [ngModel]="editorContent" />
+              <div id="editor"></div>
             </div>
 
           </div>

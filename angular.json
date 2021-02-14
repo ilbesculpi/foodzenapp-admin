@@ -30,12 +30,14 @@
             "styles": [
               "src/assets/vendor/font-awesome/css/all.css",
               "src/assets/theme/adminlte/css/adminlte.css",
+              "src/assets/plugins/summernote/summernote-bs4.min.css",
               "src/styles.scss"
             ],
             "scripts": [
               "src/assets/vendor/jquery/jquery-3.5.1.js",
-              "src/assets/vendor/bootstrap/js/bootstrap.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.js",
               "src/assets/vendor/font-awesome/js/all.js",
+              "src/assets/plugins/summernote/summernote-bs4.min.js",
               "src/assets/theme/adminlte/js/adminlte.js"
             ]
           },

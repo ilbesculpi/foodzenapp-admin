@@ -1,7 +1,10 @@
 import { AuthService } from './auth.service';
-import { RecipesService } from './recipes.service';
+import { LayoutService } from './layout.service';
+import { RecipesService, CreateRecipeRequest } from './recipes.service';
 
 export {
     AuthService,
-    RecipesService
+    LayoutService,
+    RecipesService,
+    CreateRecipeRequest
 };
