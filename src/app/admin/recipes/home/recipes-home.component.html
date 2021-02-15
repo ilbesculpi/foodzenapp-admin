@@ -36,7 +36,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let recipe of recipes">
-          <td>{{ recipe.name }}</td>
+          <td>
+            <a [routerLink]="['/admin/recipes', recipe.id, 'view']">
+              {{ recipe.name }}
+            </a>
+          </td>
           <td>&nbsp;</td>
           <td>{{ recipe.rating }}</td>
           <td>{{ recipe.status }}</td>

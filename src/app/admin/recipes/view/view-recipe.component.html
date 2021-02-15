@@ -1,0 +1,55 @@
+<ng-container *ngIf="$recipe | async as recipe">
+
+  <div class="content-header row mb-2">
+    <div class="col-sm-6">
+      <h1>{{ recipe.name }}</h1>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a routerLink="/admin/dashboard">Dashboard</a></li>
+        <li class="breadcrumb-item"><a routerLink="/admin/recipes">Recipes</a></li>
+        <li class="breadcrumb-item active">{{ recipe.name }}</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Recipe</h3>
+    </div>
+    <div class="card-body">
+      <div [innerHTML]="recipe.description"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Ingredients</h3>
+    </div>
+    <div class="card-body">
+      <div>
+        <ul>
+          <li>Lorem</li>
+          <li>Ipsum</li>
+          <li>Salt</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Preparation</h3>
+    </div>
+    <div class="card-body">
+      <div>
+        <ol>
+          <li>Lorem</li>
+          <li>Ipsum</li>
+          <li>Salt</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</ng-container>
